@@ -1,0 +1,6 @@
+header {
+  & a:first-child {
+    /*preenche todo o espaço, deixando um vazio entre os links*/
+    margin-right: auto;
+  }
+}
