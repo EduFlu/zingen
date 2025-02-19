@@ -39,3 +39,28 @@
   padding: 1rem 2rem;
   font-size: 1.125rem;
 }  
+
+  /*método para usar o botão sem informação html entre tags*/
+  .btn[aria-label] {
+    /*dexixar o botão com a borda e sem fundo*/
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      border-radius: inherit;
+      inset: 1.5px;
+      background-color: var(--background-color);
+    }
+
+    &::after {
+      content: attr(aria-label);
+
+      /*para que o texto fique visivel e mude de cor*/
+      background: var(--btn-bg-color);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      z-index: 1;
+    }
+  }
